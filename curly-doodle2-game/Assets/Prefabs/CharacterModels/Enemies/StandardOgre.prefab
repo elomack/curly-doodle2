@@ -1455,6 +1455,8 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 3
+  FloatingTextPrefab: {fileID: 5529354301926655439, guid: 529d6d1c202c50c479d8014e3d560fdd,
+    type: 3}
   level: 1
   expYield: 56
   healthBar: {fileID: 4756605713776380651}

@@ -4,11 +4,12 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
     public float currentHealth { get; private set; }
-
     public bool isDead = false;
     
     public Stat damage;
     public Stat armor;
+
+    public GameObject FloatingTextPrefab;
 
     private void Awake()
     {
@@ -33,6 +34,11 @@ public class CharacterStats : MonoBehaviour
 
         currentHealth -= damage;
 
+        if (FloatingTextPrefab && currentHealth > 0)
+        {
+            ShowFloatingText();
+        }
+
         if (currentHealth <= 0)
         {
             Die();
@@ -49,5 +55,12 @@ public class CharacterStats : MonoBehaviour
     {
         Debug.Log(transform.name + " died.");
         isDead = true;
+    }
+
+    void ShowFloatingText()
+    {
+        var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = currentHealth.ToString();
+        Debug.Log("showing floating text");
     }
 }

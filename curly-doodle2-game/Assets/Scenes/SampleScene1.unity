@@ -18933,7 +18933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678353497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.78, z: -37.9}
+  m_LocalPosition: {x: 0, y: 0.78, z: 7.9}
   m_LocalScale: {x: 0.53333336, y: 0.8, z: 0.53333336}
   m_Children:
   - {fileID: 4086281217441544}
@@ -19017,6 +19017,7 @@ MonoBehaviour:
     baseValue: 20
   armor:
     baseValue: 0
+  FloatingTextPrefab: {fileID: 0}
   energy: 100
   healthRegen: 5
   walkSpeed: 3
@@ -43053,11 +43054,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1619468062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63a8d91557a3484b9ac435b32157d2d, type: 3}
+  m_Script: {fileID: 11500000, guid: b2c7297613b3cea4ebee8be6f0f618b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - {clip: {fileID: 0}, name: PlayerDeath, volume: 0, pitch: 0, loop: 0, source: {fileID: 0}}
+  sounds: []
 --- !u!4 &1619468064
 Transform:
   m_ObjectHideFlags: 0

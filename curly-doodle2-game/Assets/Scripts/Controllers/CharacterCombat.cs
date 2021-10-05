@@ -15,7 +15,6 @@ public class CharacterCombat : MonoBehaviour
 
     private CharacterStats myStats;
     private Animator anim;
-    public GameObject damageTextPrefab;
 
     private void Start()
     {
@@ -55,17 +54,11 @@ public class CharacterCombat : MonoBehaviour
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.damage.GetValue());
 
-        Vector3 damageTextPosition = damageTextOffset + transform.position;
-        GameObject damageTextObject = (GameObject)
-                                Instantiate(damageTextPrefab, damageTextPosition, Quaternion.identity);
-        damageTextObject.transform.GetChild(0).GetComponent<TextMesh>().text
-            = myStats.damage.GetValue().ToString();
-        yield return new WaitForSeconds(1f);
-        Destroy(damageTextObject);
 
         if (anim != null)
         {
             anim.SetTrigger("GetHit");
         }
     }
+
 }

@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7186372657364276904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,6 +1255,8 @@ MonoBehaviour:
     baseValue: 6
   armor:
     baseValue: 5
+  FloatingTextPrefab: {fileID: 7650746750191560411, guid: 529d6d1c202c50c479d8014e3d560fdd,
+    type: 3}
   level: 1
   expYield: 70
   healthBar: {fileID: 7186372657826187113}
