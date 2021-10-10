@@ -9,6 +9,8 @@ public class EnemyStats : CharacterStats
     [SerializeField]private float expYield;
     private float deathDelay = 3f;
 
+    public EnemyType enemyType;
+
     Animator anim;
     Enemy enemy;
     EnemyController controller;
@@ -57,4 +59,21 @@ public class EnemyStats : CharacterStats
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        if (enemyType == EnemyType.Orc)
+        {
+            FindObjectOfType<AudioManager>().Play("OrcDamaged");
+        }
+        else if (enemyType == EnemyType.Golem)
+        {
+            FindObjectOfType<AudioManager>().Play("GolemDamaged");
+        }
+        
+    }
+
+    public enum EnemyType { Orc, Golem };
+
 }

@@ -1259,6 +1259,7 @@ MonoBehaviour:
     type: 3}
   level: 1
   expYield: 70
+  enemyType: 1
   healthBar: {fileID: 7186372657826187113}
 --- !u!114 &7186372657784225495
 MonoBehaviour:
@@ -1275,8 +1276,6 @@ MonoBehaviour:
   attackSpeed: 1
   attackDelay: 0.6
   damageTextOffset: {x: -1, y: 0.25, z: 0}
-  damageTextPrefab: {fileID: 6540114165904282164, guid: 640a2291bf2a23b47a7daafd9bacd87b,
-    type: 3}
 --- !u!195 &7186372657784225494
 NavMeshAgent:
   m_ObjectHideFlags: 0

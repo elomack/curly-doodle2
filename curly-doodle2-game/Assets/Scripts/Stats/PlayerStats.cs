@@ -94,4 +94,10 @@ public class PlayerStats : CharacterStats
     {
         AddHealth(healthRegen);
     }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        FindObjectOfType<AudioManager>().Play("HeroDamaged");
+    }
 }

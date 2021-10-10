@@ -5,14 +5,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     private Vector3 moveDirection;
-    private Vector3 velocity;
+    public Vector3 velocity;
 
-    [SerializeField] private bool isGrounded;
+    [SerializeField] public bool isGrounded;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask movementMask;
     [SerializeField] private float gravity = -10f;
     [SerializeField] private float jumpCooldown = 0f;
+    public bool isRunning;
 
     float moveZ;
     float moveX;
@@ -138,19 +139,21 @@ public class PlayerMovement : MonoBehaviour
     private void Idle()
     {
         anim.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
+        isRunning = false;
     }
 
     private void Walk()
     {
         moveSpeed = stats.walkSpeed;
         anim.SetFloat("Speed", .5f, 0.1f, Time.deltaTime);
+        isRunning = false;
     }
 
     private void Run()
     {
         moveSpeed = stats.runSpeed;
         anim.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
-
+        isRunning = true;
     }
 
     private void Jump()
@@ -159,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.y = Mathf.Sqrt(stats.jumpHeight * -2f * gravity);
         anim.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
         jumpCooldown = 0f;
+        isRunning = false;
     }
 
     private void SetFocus(Interactable newFocus)
@@ -177,5 +181,10 @@ public class PlayerMovement : MonoBehaviour
         if (focus != null)
             focus.OnDefocused();
         focus = null;
+    }
+
+    public Vector3 GetMoveDirection()
+    {
+        return moveDirection;
     }
 }
