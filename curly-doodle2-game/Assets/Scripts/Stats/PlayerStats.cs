@@ -25,6 +25,8 @@ public class PlayerStats : CharacterStats
     public HealthBar healthBar;
     public ExperienceBar experienceBar;
     public GameObject experienceTextPrefab;
+    public GameObject levelUpVFXPrefab;
+    public GameObject levelUpText;
 
     private void Start()
     {
@@ -63,6 +65,9 @@ public class PlayerStats : CharacterStats
         {
             currentExperience = (currentExperience + expToAdd) % targetExperience;
             level++;
+            var go = Instantiate(levelUpVFXPrefab, transform.position, Quaternion.identity, transform);
+            FindObjectOfType<AudioManager>().Play("PlayerLevelUp");
+            ShowLevelUpText();
             Debug.Log("added " + expToAdd + " exp");
             Debug.Log("lvl up");
             targetExperience *= 1.4f;
@@ -99,5 +104,19 @@ public class PlayerStats : CharacterStats
     {
         base.TakeDamage(damage);
         FindObjectOfType<AudioManager>().Play("HeroDamaged");
+    }
+
+    public void ShowLevelUpText()
+    {
+        StartCoroutine(ScaleLevelUpText());
+    }
+
+    private IEnumerator ScaleLevelUpText()
+    {
+        levelUpText.transform.localScale = Vector2.zero;
+        levelUpText.SetActive(true);
+        levelUpText.transform.LeanScale(Vector2.one, 1.5f);
+        yield return new WaitForSeconds(2.5f);
+        levelUpText.SetActive(false);
     }
 }

@@ -22,7 +22,6 @@ public class PlayerFootsteps : MonoBehaviour
             audioSource.isPlaying == false &&
             (playerMovement.GetMoveDirection().x != 0 || playerMovement.GetMoveDirection().z != 0))
         {
-            Debug.Log("test if statement");
             audioSource.volume = Random.Range(0.8f, 1f);
             audioSource.pitch = Random.Range(0.8f, 1.2f);
             if (playerMovement.isRunning)

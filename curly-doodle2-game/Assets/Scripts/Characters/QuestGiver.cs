@@ -58,11 +58,14 @@ public class QuestGiver : Interactable
             experienceText.text = quest.experienceReward.ToString();
             goldText.text = quest.goldReward.ToString();
         }
+
+        FindObjectOfType<AudioManager>().Play("QuestOpen");
     }
 
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("QuestClose");
     }
 
     public void AcceptQuest()
@@ -77,7 +80,7 @@ public class QuestGiver : Interactable
         }
         else
         {
-            questWindow.SetActive(false);
+            CloseQuestWindow();
             quest.isActive = true;
             playerQuests.quests.Add(quest);
         }
