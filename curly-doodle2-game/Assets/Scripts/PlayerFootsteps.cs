@@ -11,7 +11,7 @@ public class PlayerFootsteps : MonoBehaviour
 
     void Start()
     {
-        playerMovement = PlayerManager.instance.player.GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
         audioSource = GetComponent<AudioSource>();
     }
 
