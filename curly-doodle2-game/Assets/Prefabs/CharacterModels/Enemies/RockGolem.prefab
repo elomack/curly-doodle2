@@ -1236,7 +1236,7 @@ MonoBehaviour:
   interactionTransform: {fileID: 7186372657784225450}
   isQuestObjective: 1
   relatedQuests:
-  - Rock and roll
+  - A Hard Job
 --- !u!114 &7186372657784225493
 MonoBehaviour:
   m_ObjectHideFlags: 0

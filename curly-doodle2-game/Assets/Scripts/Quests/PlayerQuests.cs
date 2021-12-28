@@ -13,12 +13,5 @@ public class PlayerQuests : MonoBehaviour
     private void Update()
     {
         quests.ForEach(x => x.Complete());
-        /*quests.ForEach(delegate (Quest x)
-        {
-            if (x.isCompleted == true)
-            {
-                quests.Remove(x);
-            }
-        });*/
     }
 }

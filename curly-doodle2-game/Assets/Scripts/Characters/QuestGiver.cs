@@ -40,10 +40,11 @@ public class QuestGiver : Interactable
         FaceTarget();
         OpenQuestWindow();
     }
+
     public void OpenQuestWindow()
     {
         questWindow.SetActive(true);
-        if (quest.isCompleted)
+        if (quest.isCompleted || quest.isActive)
         {
             layoverText.SetActive(true);
             titleText.text = null;
@@ -57,18 +58,13 @@ public class QuestGiver : Interactable
             descriptionText.text = quest.description;
             experienceText.text = quest.experienceReward.ToString();
             goldText.text = quest.goldReward.ToString();
+            QuestManager.instance.currentQuestGiver = this.gameObject;
         }
 
         FindObjectOfType<AudioManager>().Play("QuestOpen");
     }
 
-    public void CloseQuestWindow()
-    {
-        questWindow.SetActive(false);
-        FindObjectOfType<AudioManager>().Play("QuestClose");
-    }
-
-    public void AcceptQuest()
+    public void GiveQuest()
     {
         if (playerQuests.quests.Exists(x => x.title == quest.title))
         {
@@ -78,12 +74,7 @@ public class QuestGiver : Interactable
         {
             Debug.Log("you have already completed the quest: " + quest.title);
         }
-        else
-        {
-            CloseQuestWindow();
-            quest.isActive = true;
-            playerQuests.quests.Add(quest);
-        }
+        
     }
 
     private void FaceTarget()
