@@ -71,9 +71,13 @@ public class EnemyStats : CharacterStats
         {
             FindObjectOfType<AudioManager>().Play("GolemDamaged");
         }
-        
+        else if (enemyType == EnemyType.Boar)
+        {
+            FindObjectOfType<AudioManager>().Play("BoarDamaged");
+        }
+
     }
 
-    public enum EnemyType { Orc, Golem };
+    public enum EnemyType { Orc, Golem, Boar };
 
 }
