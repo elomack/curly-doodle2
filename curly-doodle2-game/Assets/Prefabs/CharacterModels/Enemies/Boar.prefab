@@ -298,13 +298,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.08
-  m_Radius: 0.32
+  m_Height: 4.2
+  m_Radius: 1.95
   m_SlopeLimit: 51
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.11
-  m_Center: {x: 0, y: 0.02, z: 0}
+  m_Center: {x: 0.14, y: 1.2, z: -1.46}
 --- !u!114 &1630736915685857157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e694924385a382746a6b7ef221ce0c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 6.68
   moveSpeed: 3
   distanceToTarget: 72.89855
   distanceToOriginalPosition: 0.16889817
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d16abbb2a41ae4cb23db4f2fe027fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  radius: 2.21
   interactionTransform: {fileID: 1630736915685857153}
   isQuestObjective: 1
   relatedQuests:
@@ -386,7 +386,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1630736915685857156}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.26
+  m_Radius: 1.07
   m_Speed: 3
   m_Acceleration: 5
   avoidancePriority: 50
@@ -395,8 +395,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.12
-  m_BaseOffset: -0.08
+  m_Height: 1.94
+  m_BaseOffset: -0.22
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1630736916595659585
