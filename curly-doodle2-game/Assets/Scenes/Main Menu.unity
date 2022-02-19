@@ -4944,7 +4944,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8372742523044546331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c7297613b3cea4ebee8be6f0f618b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 292786bb821d8b5469e964d3d4358762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8372742523044546331}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cec7fa8ce53ae84b88b7959887fd767, type: 3}
+  m_Script: {fileID: 11500000, guid: 9981c64698301fc41a3191cee0d82641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkingClip: {fileID: 8300000, guid: db0715e4dd537e948991e22b2d32fcb6, type: 3}
